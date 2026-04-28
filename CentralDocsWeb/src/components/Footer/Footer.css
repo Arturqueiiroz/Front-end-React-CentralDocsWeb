@@ -3,6 +3,7 @@
   background-color: #ffffff;
   border-top: 1px solid #f1f5f9; 
   padding: 60px 0;
+  border-top: none;
 }
 
 .container-footer {
@@ -36,11 +37,11 @@
 }
 
 .footer-links li a {
-  text-decoration: underline; 
   color: #64748b;
   font-size: 14px;
   font-weight: 500;
   transition: color 0.2s ease;
+  text-decoration: none;
 }
 
 .footer-links li a:hover {
