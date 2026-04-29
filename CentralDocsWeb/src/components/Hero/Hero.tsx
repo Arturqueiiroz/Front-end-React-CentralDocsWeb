@@ -5,7 +5,6 @@ function Hero() {
   return (
     <section className="hero">
       <div className="container-hero">
-        
         <div className="hero-left">
           <div className="badge-seguranca">
             <span className="dot"></span>
@@ -13,33 +12,35 @@ function Hero() {
           </div>
 
           <h1 className="hero-title">
-            Organize seus documentos <br /> em um só lugar
+            Organize seus documentos em um só lugar
           </h1>
 
           <p className="hero-description">
-            A plataforma definitiva para gestão documental corporativa. 
-            Proteja seus dados sensíveis com criptografia de ponta e 
-            organize fluxos de trabalho com precisão cirúrgica.
+            A plataforma definitiva para gestão documental corporativa. Proteja
+            seus dados sensíveis com criptografia de ponta e organize fluxos de
+            trabalho com precisão cirúrgica.
           </p>
 
           <div className="hero-buttons">
             <button className="btn-primary">Começar agora</button>
+
             <button className="btn-secondary">
-              <span className="icon-circle">⦿</span> Ver demonstração
+              <span className="icon-circle">⦿</span>
+              Ver demonstração
             </button>
           </div>
         </div>
 
-
-            <img 
-              src={roboImg} 
-              alt="Mascote Robô CentralDocs" 
-              className="robot-image" 
+        <div className="hero-right">
+          <div className="card-visual">
+            <img
+              src={roboImg}
+              alt="Mascote Robô CentralDocs"
+              className="robot-image"
             />
-              
-            </div>
-        
-        
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
