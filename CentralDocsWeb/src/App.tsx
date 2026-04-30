@@ -6,6 +6,7 @@ import Efficiency from "./components/Efficiency/Efficiency";
 import CTA from "./components/Cta/Cta";
 import Login from "./pages/Login/Login";
 import Cadastro from "./pages/Cadastro/Cadastro";
+import EsqueceuSenha from "./pages/EsqueceuSenha/EsqueceuSenha";
 import "./index.css";
 import "./App.css";
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/esqueceu-senha" element={<EsqueceuSenha />} />
       </Routes>
     </BrowserRouter>
   );

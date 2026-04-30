@@ -1,4 +1,8 @@
-.cadastro-header h1 {
+.forgot-header {
+  margin-bottom: 34px;
+}
+
+.forgot-header h1 {
   margin: 0 0 10px;
   color: #0f172a;
   font-size: 42px;
@@ -6,22 +10,24 @@
   letter-spacing: -1px;
 }
 
-.cadastro-header p {
-  margin: 0 0 34px;
+.forgot-header p {
+  max-width: 420px;
+  margin: 0;
   color: #64748b;
   font-size: 16px;
+  line-height: 1.6;
 }
 
-.cadastro-form {
+.forgot-form {
   width: 100%;
 }
 
-.form-group {
+.input-group {
   width: 100%;
   margin-bottom: 18px;
 }
 
-.form-group label {
+.input-group label {
   display: block;
   margin-bottom: 8px;
 
@@ -30,7 +36,7 @@
   font-weight: 700;
 }
 
-.input-wrapper {
+.input-icon {
   width: 100%;
   height: 56px;
 
@@ -47,12 +53,17 @@
   transition: 0.2s ease;
 }
 
-.input-wrapper:focus-within {
+.input-icon:focus-within {
   border-color: #2563eb;
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
 }
 
-.input-wrapper input {
+.input-icon span {
+  font-size: 16px;
+  opacity: 0.75;
+}
+
+.input-icon input {
   width: 100%;
   height: 100%;
 
@@ -64,25 +75,11 @@
   font-size: 15px;
 }
 
-.input-wrapper input::placeholder {
+.input-icon input::placeholder {
   color: #94a3b8;
 }
 
-.password-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-.btn-eye {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-size: 16px;
-  opacity: 0.65;
-}
-
-.btn-cadastrar {
+.btn-forgot {
   width: 100%;
   height: 58px;
   margin-top: 12px;
@@ -101,62 +98,46 @@
   box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
 }
 
-.btn-cadastrar:hover {
+.btn-forgot:hover {
   transform: translateY(-1px);
   box-shadow: 0 14px 28px rgba(37, 99, 235, 0.34);
 }
 
-.cadastro-divider {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-
+.divider {
+  height: 1px;
+  background: #dbe4ef;
   margin: 30px 0 22px;
 }
 
-.cadastro-divider span {
-  flex: 1;
-  height: 1px;
-  background: #dbe4ef;
-}
-
-.cadastro-divider p {
-  margin: 0;
-  color: #64748b;
-  font-size: 14px;
-}
-
-.login-link {
+.back-login {
   margin: 0;
   text-align: center;
-
-  color: #64748b;
   font-size: 15px;
 }
 
-.login-link a {
+.link {
   color: #2563eb;
   font-weight: 700;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.login-link a:hover {
+.link:hover {
   text-decoration: underline;
 }
 
 @media (max-width: 980px) {
-  .cadastro-header h1 {
+  .forgot-header h1 {
     font-size: 34px;
   }
 }
 
 @media (max-width: 560px) {
-  .cadastro-header h1 {
+  .forgot-header h1 {
     font-size: 30px;
   }
 
-  .password-row {
-    grid-template-columns: 1fr;
-    gap: 0;
+  .forgot-header p {
+    font-size: 15px;
   }
 }
