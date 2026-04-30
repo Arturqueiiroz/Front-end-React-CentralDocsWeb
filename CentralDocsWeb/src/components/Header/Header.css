@@ -16,14 +16,12 @@
   align-items: center;
 }
 
-/* LADO ESQUERDO */
 .header-left {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-/* MENU */
 .menu-btn {
   width: 34px;
   height: 34px;
@@ -45,7 +43,6 @@
   border-radius: 999px;
 }
 
-/* LOGO */
 .header-brand {
   display: flex;
   align-items: center;
@@ -58,7 +55,6 @@
   cursor: pointer;
 }
 
-/* NAV */
 .header-nav {
   margin-left: 42px;
 }
@@ -84,15 +80,12 @@
   color: #0561c7;
 }
 
-/* AÇÕES */
 .header-acoes {
   margin-left: auto;
   display: flex;
   align-items: center;
   gap: 20px;
 }
-
-/* BUSCA */
 .pesquisa-fake {
   width: 360px;
   height: 46px;
@@ -125,19 +118,11 @@
   color: #000;
 }
 
-/* BOTÃO LOGIN */
 .btn-login {
-  background: #0667ee;
-  color: #ffffff;
-  border: none;
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-
-  box-shadow: 0 8px 20px rgba(6, 103, 238, 0.28);
-  transition: 0.25s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-login:hover {
@@ -146,7 +131,6 @@
   box-shadow: 0 12px 26px rgba(6, 103, 238, 0.36);
 }
 
-/* RESPONSIVO */
 @media (max-width: 1024px) {
   .header-nav {
     display: none;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../assets/img/LogoCentralDocsNova.png";
 import "./Login.css";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -15,11 +16,10 @@ function Login() {
   return (
     <div className="login">
       <div className="login-box">
-        <img src={logo} alt="CentralDocs" className="LogoCentralDocsNova.png" />
+        <img src={logo} alt="CentralDocs" className="logo"/>
         <p className="subtitle">Acesse sua plataforma institucional</p>
 
         <form onSubmit={handleSubmit}>
-          {/* EMAIL */}
           <div className="input-group">
             <label>E-mail</label>
             <div className="input-icon">
@@ -33,7 +33,6 @@ function Login() {
             </div>
           </div>
 
-          {/* SENHA */}
           <div className="input-group">
             <div className="label-row">
               <label>Senha</label>
@@ -58,13 +57,11 @@ function Login() {
             </div>
           </div>
 
-          {/* CHECKBOX */}
           <div className="remember">
             <input type="checkbox" id="remember" />
             <label htmlFor="remember">Lembrar senha nesse dispositivo</label>
           </div>
 
-          {/* BOTÃO */}
           <button className="btn-login">
             Entrar
           </button>
@@ -72,12 +69,11 @@ function Login() {
 
         <div className="divider"></div>
 
-        <p className="signup">
-          Não tem uma conta? <span className="link">Criar conta</span>
-        </p>
+<p className="signup">
+  Não tem uma conta? <Link to="/cadastro" className="link">Criar conta</Link>
+</p>
       </div>
 
-      {/* RODAPÉ */}
       <div className="bottom">
 
       </div>

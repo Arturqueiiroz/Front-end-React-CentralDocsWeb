@@ -1,4 +1,5 @@
 import "./Header.css";
+import { Link } from "react-router-dom";
 import logo from "../../assets/img/LogoCentralDocsNova.png";
 
 function Header() {
@@ -32,7 +33,9 @@ function Header() {
             <span>Digite o que você procura...</span>
           </div>
 
-          <button className="btn-login">Login</button>
+          <Link to="/login" className="btn-login">
+  Login
+</Link>
         </div>
 
       </div>

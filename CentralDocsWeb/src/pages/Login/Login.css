@@ -61,6 +61,13 @@ body {
   background: transparent;
 }
 
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 280px; 
+  height: auto;
+}
+
 .label-row {
   display: flex;
   justify-content: space-between;
@@ -97,6 +104,16 @@ body {
 
 .btn-login:hover {
   background: #2563eb;
+}
+
+.link {
+  color: #3b82f6;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 
 .divider {
