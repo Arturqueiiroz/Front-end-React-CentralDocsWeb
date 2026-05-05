@@ -1,0 +1,158 @@
+.documentos-tabela-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.documentos-tabela-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.documentos-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 820px;
+}
+
+.documentos-tabela thead {
+  background: #f8fafc;
+}
+
+.documentos-tabela th {
+  padding: 18px 20px;
+  text-align: left;
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.documentos-tabela td {
+  padding: 18px 20px;
+  border-top: 1px solid #eef2f7;
+
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.documento-tipo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.documento-icone {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.documento-icone.azul {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.documento-icone.verde {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.documento-icone.laranja {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.documento-icone.roxo {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.documento-tipo strong {
+  display: block;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.documento-tipo small {
+  display: block;
+  margin-top: 3px;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.documento-acoes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.documento-acoes button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #64748b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.documento-acoes button:hover {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.documentos-tabela-footer {
+  padding: 14px 20px;
+  border-top: 1px solid #eef2f7;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.documentos-tabela-footer span {
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tabela-paginacao {
+  display: flex;
+  gap: 8px;
+}
+
+.tabela-paginacao button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #64748b;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.tabela-paginacao button:hover {
+  background: #eff6ff;
+  color: #2563eb;
+}

@@ -7,6 +7,7 @@ import CTA from "./components/Cta/Cta";
 import Login from "./pages/Login/Login";
 import Cadastro from "./pages/Cadastro/Cadastro";
 import EsqueceuSenha from "./pages/EsqueceuSenha/EsqueceuSenha";
+import Documentos from "./pages/TelaDocumento/Documento";
 import "./index.css";
 import "./App.css";
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/esqueceu-senha" element={<EsqueceuSenha />} />
+        <Route path="/documentos" element={<Documentos />} />
       </Routes>
     </BrowserRouter>
   );

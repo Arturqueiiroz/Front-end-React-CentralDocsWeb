@@ -1,45 +1,63 @@
 import "./Header.css";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/LogoCentralDocsNova.png";
+import MenuLateral from "../MenuLateral/MenuLateral";
 
 function Header() {
+  const [menuAberto, setMenuAberto] = useState(false);
+
+  function abrirMenu() {
+    setMenuAberto(true);
+  }
+
+  function fecharMenu() {
+    setMenuAberto(false);
+  }
+
   return (
-    <header className="header">
-      <div className="container-header">
+    <>
+      <MenuLateral aberto={menuAberto} fecharMenu={fecharMenu} />
 
-        <div className="header-left">
-          <button className="menu-btn" aria-label="Abrir menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+      <header className="header">
+        <div className="container-header">
+          <div className="header-left">
+            <button
+              className="menu-btn"
+              aria-label="Abrir menu"
+              onClick={abrirMenu}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
 
-          <div className="header-brand">
-            <img src={logo} alt="CentralDocs Logo" className="logo-img" />
-          </div>
-        </div>
-
-        <nav className="header-nav">
-          <ul className="nav-lista">
-            <li><a href="#">Documentos</a></li>
-            <li><a href="#">Compartilhado</a></li>
-            <li><a href="#">Recentes</a></li>
-          </ul>
-        </nav>
-
-        <div className="header-acoes">
-          <div className="pesquisa-fake">
-            <span className="search-icon">⌕</span>
-            <span>Digite o que você procura...</span>
+            <div className="header-brand">
+              <img src={logo} alt="CentralDocs Logo" className="logo-img" />
+            </div>
           </div>
 
-          <Link to="/login" className="btn-login">
-  Login
-</Link>
-        </div>
+          <nav className="header-nav">
+            <ul className="nav-lista">
+              <Link to="/documentos">Documentos</Link>
+              <li><a href="#">Compartilhado</a></li>
+              <li><a href="#">Recentes</a></li>
+            </ul>
+          </nav>
 
-      </div>
-    </header>
+          <div className="header-acoes">
+            <div className="pesquisa-fake">
+              <span className="search-icon">⌕</span>
+              <span>Digite o que você procura...</span>
+            </div>
+
+            <Link to="/login" className="btn-login">
+              Login
+            </Link>
+          </div>
+        </div>
+      </header>
+    </>
   );
 }
 
