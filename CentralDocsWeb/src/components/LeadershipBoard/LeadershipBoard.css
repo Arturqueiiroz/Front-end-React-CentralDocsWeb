@@ -1,0 +1,39 @@
+.leadership-board {
+  padding: 80px;
+  text-align: center;
+}
+
+.leadership-board span {
+  color: #4a6dff;
+  font-size: 12px;
+}
+
+.leadership-board h2 {
+  margin: 15px 0 40px;
+}
+
+.leaders {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.leader-card {
+  width: 250px;
+
+  background: white;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.leader-card img {
+  width: 100%;
+}
+
+.leader-card h4 {
+  margin-top: 15px;
+}

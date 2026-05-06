@@ -1,0 +1,26 @@
+.institutional-section {
+  height: 420px;
+
+  background: linear-gradient(
+    90deg,
+    #0b1f3a,
+    #2463ff
+  );
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 80px;
+
+  color: white;
+}
+
+.institutional-content h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+.institutional-content p {
+  width: 500px;
+  line-height: 1.6;
+}
