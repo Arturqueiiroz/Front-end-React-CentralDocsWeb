@@ -23,7 +23,7 @@ function Documentos() {
             <span className="resumo-icon resumo-blue">▣</span>
             <div>
               <p>Total de documentos</p>
-              <strong>128</strong>
+              <strong>10</strong>
             </div>
           </div>
 
@@ -31,7 +31,7 @@ function Documentos() {
             <span className="resumo-icon resumo-green">✓</span>
             <div>
               <p>Protegidos</p>
-              <strong>116</strong>
+              <strong>1</strong>
             </div>
           </div>
 
@@ -39,7 +39,7 @@ function Documentos() {
             <span className="resumo-icon resumo-orange">!</span>
             <div>
               <p>Precisam revisar</p>
-              <strong>12</strong>
+              <strong>1</strong>
             </div>
           </div>
         </section>

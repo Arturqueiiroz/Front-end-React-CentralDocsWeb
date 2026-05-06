@@ -17,22 +17,6 @@ const documentos = [
     data: "05 Nov 2023",
     cor: "verde",
   },
-  {
-    tipo: "Extrato Bancário Anual",
-    formato: "PDF • 5.2 MB",
-    numero: "F2023-99120",
-    emissor: "Bank of America Corp",
-    data: "31 Dez 2023",
-    cor: "laranja",
-  },
-  {
-    tipo: "Seguro Residencial",
-    formato: "PDF • 1.1 MB",
-    numero: "POL-882193",
-    emissor: "MetLife Insurance",
-    data: "18 Out 2023",
-    cor: "roxo",
-  },
 ];
 
 function DocumentosTabela() {
@@ -82,7 +66,7 @@ function DocumentosTabela() {
       </div>
 
       <div className="documentos-tabela-footer">
-        <span>Exibindo 1-4 de 128 documentos</span>
+        <span>Exibindo 1-2 de 12 documentos</span>
 
         <div className="tabela-paginacao">
           <button>‹</button>
