@@ -1,4 +1,7 @@
 import "./LeadershipBoard.css";
+import MatheusImg from "../../assets/img/Matheus.jpg";
+import ArturImg from "../../assets/img/Artur.jpg";
+import NicolayImg from "../../assets/img/Nicolay.jpg";
 
 function LeadershipBoard() {
   return (
@@ -13,10 +16,7 @@ function LeadershipBoard() {
 
       <div className="leaders">
         <div className="leader-card">
-          <img
-            src=""
-            alt=""
-          />
+          <img src={MatheusImg} alt="Matheus" />
 
           <h4>Matheus Cantanhede da Silva</h4>
 
@@ -24,27 +24,19 @@ function LeadershipBoard() {
         </div>
 
         <div className="leader-card">
-          <img
-            src=""
-            alt=""
-          />
+          <img src={ArturImg} alt="Artur" />
 
           <h4>Artur Cosmos Queiroz</h4>
 
           <p>Desenvolvedor Full-Stack</p>
+        </div>
 
-          
         <div className="leader-card">
-          <img
-            src=""
-            alt=""
-          />
+          <img src={NicolayImg}alt="Nicolay" />
 
           <h4>Nicolay Neves</h4>
 
           <p>Desenvolvedor Front-end</p>
-        </div>
-
         </div>
       </div>
     </section>
