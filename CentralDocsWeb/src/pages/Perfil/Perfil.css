@@ -1,0 +1,29 @@
+.profile-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f6fa;
+}
+
+.profile-content {
+  flex: 1;
+}
+
+.profile-body {
+  padding: 40px;
+}
+
+.profile-body h1 {
+  font-size: 42px;
+  color: #0f172a;
+}
+
+.profile-body p {
+  color: #64748b;
+  margin: 10px 0 30px;
+}
+
+.profile-cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
