@@ -41,6 +41,7 @@ function Header() {
             <ul className="nav-lista">
               <Link to="/documentos">Documentos</Link>
               <Link to="/Institucional">Sobre nós</Link>
+              <Link to="/Acessibilidade">Acessibilidade</Link>
               <li><a href="#">Compartilhado</a></li>
               <li><a href="#">Recentes</a></li>
             </ul>

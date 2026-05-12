@@ -11,7 +11,6 @@ import Documentos from "./pages/TelaDocumento/Documento";
 import "./index.css";
 import "./App.css";
 import Institucional from "./pages/Institucional/Institucional";
-import Perfil from "./pages/Perfil/Perfil";
 
 function Home() {
   return (
@@ -36,6 +35,7 @@ function App() {
         <Route path="/documentos" element={<Documentos />} />
         <Route path="/institucional" element={<Institucional />} />
         <Route path="/perfil" element={<Perfil />} />
+        <Route path="/Acessibilidade" element={<Acessibilidade />} />
       </Routes>
     </BrowserRouter>
   );

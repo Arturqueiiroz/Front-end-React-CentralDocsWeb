@@ -1,27 +1,89 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthLayout from "../../components/AuthLayout/AuthLayout";
 import "./Cadastro.css";
 
 function Cadastro() {
+  const navigate = useNavigate();
+
   const [nome, setNome] = useState("");
   const [cpf, setCpf] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [confirmarSenha, setConfirmarSenha] = useState("");
+
   const [mostrarSenha, setMostrarSenha] = useState(false);
   const [mostrarConfirmarSenha, setMostrarConfirmarSenha] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [mensagem, setMensagem] = useState("");
+  const [erro, setErro] = useState("");
+  const [carregando, setCarregando] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log({
-      nome,
-      cpf,
-      email,
-      senha,
-      confirmarSenha,
-    });
+    setMensagem("");
+    setErro("");
+
+    if (!nome || !cpf || !email || !senha || !confirmarSenha) {
+      setErro("Preencha todos os campos.");
+      return;
+    }
+
+    if (cpf.length !== 11) {
+      setErro("O CPF deve conter exatamente 11 números.");
+      return;
+    }
+
+    if (senha !== confirmarSenha) {
+      setErro("As senhas não coincidem.");
+      return;
+    }
+
+    try {
+      setCarregando(true);
+
+      const resposta = await fetch(
+        "https://localhost:7196/api/Usuario/CriarUsuario",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nome,
+            cpf,
+            email,
+            senha,
+            confirmarSenha,
+          }),
+        }
+      );
+
+      const dados = await resposta.json();
+
+      if (!resposta.ok) {
+        setErro(dados.mensagem || dados.Mensagem || "Erro ao criar usuário.");
+        return;
+      }
+
+      setMensagem("Conta criada com sucesso!");
+
+      setNome("");
+      setCpf("");
+      setEmail("");
+      setSenha("");
+      setConfirmarSenha("");
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 1500);
+    } catch (error) {
+      setErro("Não foi possível conectar com a API.");
+      console.error(error);
+    } finally {
+      setCarregando(false);
+    }
   };
 
   return (
@@ -53,7 +115,8 @@ function Cadastro() {
               type="text"
               placeholder="Digite seu CPF"
               value={cpf}
-              onChange={(e) => setCpf(e.target.value)}
+              maxLength={11}
+              onChange={(e) => setCpf(e.target.value.replace(/\D/g, ""))}
             />
           </div>
         </div>
@@ -117,8 +180,11 @@ function Cadastro() {
           </div>
         </div>
 
-        <button type="submit" className="btn-cadastrar">
-          Criar conta
+        {erro && <p className="mensagem-erro">{erro}</p>}
+        {mensagem && <p className="mensagem-sucesso">{mensagem}</p>}
+
+        <button type="submit" className="btn-cadastrar" disabled={carregando}>
+          {carregando ? "Criando conta..." : "Criar conta"}
         </button>
       </form>
 
