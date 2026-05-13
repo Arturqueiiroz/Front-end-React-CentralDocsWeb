@@ -111,7 +111,17 @@ function MenuLateral({ aberto, fecharMenu }: MenuLateralProps) {
             >
               <span className="menu-icon">⇄</span>
               Compartilhado
-            </Link>
+            </Link>    
+            <Link
+                to="/perguntas-frequentes"
+                className={`menu-item ${
+                  itemAtivo("/perguntas-frequentes") ? "ativo" : ""
+                }`}
+                onClick={fecharMenu}
+              >
+                <span className="menu-icon">?</span>
+                Perguntas frequentes
+            </Link>          
           </nav>
         </div>
 

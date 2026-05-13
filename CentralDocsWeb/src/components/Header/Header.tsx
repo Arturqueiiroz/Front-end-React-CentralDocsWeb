@@ -1,12 +1,12 @@
 import "./Header.css";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../assets/img/LogoCentralDocsNova.png";
 import MenuLateral from "../MenuLateral/MenuLateral";
 
 function Header() {
   const [menuAberto, setMenuAberto] = useState(false);
-  const navigate = useNavigate();
+  const [pesquisa, setPesquisa] = useState("");
 
   const token = localStorage.getItem("token");
   const usuarioSalvo = localStorage.getItem("usuario");
@@ -20,10 +20,14 @@ function Header() {
     setMenuAberto(false);
   }
 
-  function sairConta() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("usuario");
-    navigate("/login");
+  function handlePesquisar(e: React.FormEvent) {
+    e.preventDefault();
+
+    if (!pesquisa.trim()) {
+      return;
+    }
+
+    console.log("Pesquisando por:", pesquisa);
   }
 
   return (
@@ -43,9 +47,9 @@ function Header() {
               <span></span>
             </button>
 
-            <div className="header-brand">
+            <Link to="/" className="header-brand">
               <img src={logo} alt="CentralDocs Logo" className="logo-img" />
-            </div>
+            </Link>
           </div>
 
           <nav className="header-nav">
@@ -59,19 +63,25 @@ function Header() {
               </li>
 
               <li>
-                <a href="#">Recentes</a>
-              </li>
+                <Link to="/recentes">Recentes</Link>
+              </li>            
             </ul>
           </nav>
 
           <div className="header-acoes">
-            <div className="pesquisa-fake">
+            <form className="pesquisa-box" onSubmit={handlePesquisar}>
               <span className="search-icon">⌕</span>
-              <span>Digite o que você procura...</span>
-            </div>
+
+              <input
+                type="text"
+                placeholder="Digite o que você procura..."
+                value={pesquisa}
+                onChange={(e) => setPesquisa(e.target.value)}
+              />
+            </form>
 
             {!token ? (
-              <Link to="/login" className="btn-login">
+              <Link to="/login" className="btn-login-header">
                 Login
               </Link>
             ) : (

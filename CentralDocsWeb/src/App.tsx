@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
@@ -13,6 +13,7 @@ import "./App.css";
 import Institucional from "./pages/Institucional/Institucional";
 import Perfil from "./pages/Perfil/Perfil";
 import Acessibilidade from "./pages/Acessibilidade/Acessibilidade";
+import PerguntasFrequentes from "./pages/PerguntasFrequentes/PerguntasFrequentes";
 
 function Home() {
   return (
@@ -26,18 +27,46 @@ function Home() {
   );
 }
 
+function RotaPrivada({ children }: { children: React.ReactNode }) {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    return <Navigate to="/" replace />;
+  }
+  return children;
+}
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Rotas públicas */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/esqueceu-senha" element={<EsqueceuSenha />} />
-        <Route path="/documentos" element={<Documentos />} />
-        <Route path="/institucional" element={<Institucional />} />
-        <Route path="/perfil" element={<Perfil />} />
-        <Route path="/Acessibilidade" element={<Acessibilidade />} />
+
+        {/* Rotas privadas */}
+        <Route path="/documentos" element={ <RotaPrivada> <Documentos /> </RotaPrivada>
+        }
+        />
+
+        <Route
+          path="/institucional" element={ <RotaPrivada> <Institucional /> </RotaPrivada>
+          }
+        />
+
+        <Route path="/perfil" element={ <RotaPrivada> <Perfil /> </RotaPrivada>
+          }
+        />
+
+        <Route path="/acessibilidade" element={ <RotaPrivada> <Acessibilidade /> </RotaPrivada>
+          }
+        />
+        <Route path="/perguntas-frequentes" element={ <RotaPrivada> <PerguntasFrequentes /> </RotaPrivada>
+          }
+        />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );
