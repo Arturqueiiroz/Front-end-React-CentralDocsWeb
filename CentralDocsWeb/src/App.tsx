@@ -13,6 +13,7 @@ import "./App.css";
 import Institucional from "./pages/Institucional/Institucional";
 import Perfil from "./pages/Perfil/Perfil";
 import Acessibilidade from "./pages/Acessibilidade/Acessibilidade";
+import PerguntasFrequentes from "./pages/PerguntasFrequentes/PerguntasFrequentes";
 
 function Home() {
   return (
