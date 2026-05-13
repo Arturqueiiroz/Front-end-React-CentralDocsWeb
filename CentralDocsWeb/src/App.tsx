@@ -11,6 +11,8 @@ import Documentos from "./pages/TelaDocumento/Documento";
 import "./index.css";
 import "./App.css";
 import Institucional from "./pages/Institucional/Institucional";
+import Perfil from "./pages/Perfil/Perfil";
+import Acessibilidade from "./pages/Acessibilidade/Acessibilidade";
 
 function Home() {
   return (

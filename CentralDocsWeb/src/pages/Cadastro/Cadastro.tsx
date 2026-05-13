@@ -39,6 +39,7 @@ function Cadastro() {
       setErro("As senhas não coincidem.");
       return;
     }
+    
 
     try {
       setCarregando(true);
@@ -62,7 +63,7 @@ function Cadastro() {
 
       const dados = await resposta.json();
 
-      if (!resposta.ok) {
+      if (!resposta.ok || dados.erro || dados.Erro) {
         setErro(dados.mensagem || dados.Mensagem || "Erro ao criar usuário.");
         return;
       }
