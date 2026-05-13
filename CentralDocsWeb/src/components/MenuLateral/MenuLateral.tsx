@@ -1,5 +1,5 @@
 import "./MenuLateral.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/img/LogoCentralDocsNova.png";
 
 type MenuLateralProps = {
@@ -9,9 +9,24 @@ type MenuLateralProps = {
 
 function MenuLateral({ aberto, fecharMenu }: MenuLateralProps) {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const usuarioSalvo = localStorage.getItem("usuario");
+  const usuario = usuarioSalvo ? JSON.parse(usuarioSalvo) : null;
+
+  const nomeUsuario = usuario?.nome || usuario?.Nome || "Usuário";
+  const inicialUsuario = nomeUsuario.charAt(0).toUpperCase();
 
   function itemAtivo(caminho: string) {
     return location.pathname === caminho;
+  }
+
+  function sairConta() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("usuario");
+
+    fecharMenu();
+    navigate("/login");
   }
 
   return (
@@ -86,25 +101,36 @@ function MenuLateral({ aberto, fecharMenu }: MenuLateralProps) {
               <span className="menu-icon">✦</span>
               Acessibilidade
             </Link>
+
+            <Link
+              to="/compartilhado"
+              className={`menu-item ${
+                itemAtivo("/compartilhado") ? "ativo" : ""
+              }`}
+              onClick={fecharMenu}
+            >
+              <span className="menu-icon">⇄</span>
+              Compartilhado
+            </Link>
           </nav>
         </div>
 
         <div className="menu-rodape">
           <div className="menu-usuario">
             <div className="usuario-info">
-              <div className="usuario-avatar">E</div>
+              <div className="usuario-avatar">{inicialUsuario}</div>
 
               <div>
-                <strong>Eduardo Silva</strong>
-                <span>Engenharia Corporativa</span>
+                <strong>{nomeUsuario}</strong>
+                <span>Conta CentralDocs</span>
               </div>
             </div>
           </div>
 
-          <Link to="/login" className="logout-btn" onClick={fecharMenu}>
+          <button type="button" className="logout-btn" onClick={sairConta}>
             <span>↪</span>
-            Logout
-          </Link>
+            Sair da conta
+          </button>
         </div>
       </aside>
     </>
