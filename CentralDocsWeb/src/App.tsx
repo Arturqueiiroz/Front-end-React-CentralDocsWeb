@@ -14,6 +14,7 @@ import Institucional from "./pages/Institucional/Institucional";
 import Perfil from "./pages/Perfil/Perfil";
 import Acessibilidade from "./pages/Acessibilidade/Acessibilidade";
 
+
 function Home() {
   return (
     <div className="app-wrapper">
@@ -37,7 +38,7 @@ function App() {
         <Route path="/documentos" element={<Documentos />} />
         <Route path="/institucional" element={<Institucional />} />
         <Route path="/perfil" element={<Perfil />} />
-        <Route path="/Acessibilidade" element={<Acessibilidade />} />
+        <Route path="/Acessibilidade" element={<Acessibilidade />} />    
       </Routes>
     </BrowserRouter>
   );
