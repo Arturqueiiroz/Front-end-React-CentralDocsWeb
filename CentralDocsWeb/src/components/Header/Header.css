@@ -132,6 +132,70 @@
   box-shadow: 0 12px 26px rgba(6, 103, 238, 0.36);
 }
 
+.perfil-header {
+  height: 50px;
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: #ffffff;
+  border-radius: 999px;
+
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.perfil-avatar {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.perfil-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.perfil-info span {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.perfil-info strong {
+  max-width: 110px;
+
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 800;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-sair:hover {
+  background: #fecaca;
+}
+
+@media (max-width: 768px) {
+  .perfil-info {
+    display: none;
+  }
+}
+
 @media (max-width: 1024px) {
   .header-nav {
     display: none;
