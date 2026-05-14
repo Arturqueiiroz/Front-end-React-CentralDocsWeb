@@ -63,7 +63,7 @@ function Login() {
         navigate("/");
       }, 1000);
     } catch (error) {
-      setErro("Não foi possível conectar com a API.");
+      setErro("Não foi possível conectar. Aguarde um momento e tente novamente.");
       console.error(error);
     } finally {
       setCarregando(false);
