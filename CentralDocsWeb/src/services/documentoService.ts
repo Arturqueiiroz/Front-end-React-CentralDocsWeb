@@ -19,7 +19,6 @@ export type CriarDocumento = {
   orgaoEmissor: string;
   dataEmissao: string;
   cidadeEmissao: string;
-  usuarioId: number;
   tipoDocumentoId: number;
 };
 

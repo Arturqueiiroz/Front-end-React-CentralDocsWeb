@@ -58,16 +58,6 @@ function CadastrarDocumento() {
       return;
     }
 
-    const usuarioSalvo = localStorage.getItem("usuario");
-    const usuario = usuarioSalvo ? JSON.parse(usuarioSalvo) : null;
-
-    const usuarioId = usuario?.id || usuario?.Id;
-
-    if (!usuarioId) {
-      setErro("Usuário não encontrado. Faça login novamente.");
-      return;
-    }
-
     try {
       setCarregando(true);
 
@@ -76,7 +66,6 @@ function CadastrarDocumento() {
         orgaoEmissor,
         dataEmissao: `${dataEmissao}T00:00:00.000Z`,
         cidadeEmissao,
-        usuarioId,
         tipoDocumentoId: Number(tipoDocumentoId),
       });
 
