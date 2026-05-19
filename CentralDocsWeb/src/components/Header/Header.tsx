@@ -1,5 +1,5 @@
 import "./Header.css";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/LogoCentralDocsNova.png";
 import MenuLateral from "../MenuLateral/MenuLateral";
@@ -10,6 +10,8 @@ function Header() {
 
   const token = localStorage.getItem("token");
   const usuarioSalvo = localStorage.getItem("usuario");
+
+  // Tratamento seguro para o JSON do localStorage
   const usuario = usuarioSalvo ? JSON.parse(usuarioSalvo) : null;
 
   function abrirMenu() {
@@ -64,7 +66,7 @@ function Header() {
 
               <li>
                 <Link to="/recentes">Recentes</Link>
-              </li>            
+              </li>
             </ul>
           </nav>
 
