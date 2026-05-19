@@ -15,6 +15,7 @@ import Perfil from "./pages/Perfil/Perfil";
 import Acessibilidade from "./pages/Acessibilidade/Acessibilidade";
 import PerguntasFrequentes from "./pages/PerguntasFrequentes/PerguntasFrequentes";
 import CadastrarDocumento from "./pages/CadastrarDocumento/CadastrarDocumento";
+import Configuracoes from "./pages/Configuracao/Configuracoes";
 function Home() {
   return (
     <div className="app-wrapper">
@@ -47,33 +48,41 @@ function App() {
         <Route path="/esqueceu-senha" element={<EsqueceuSenha />} />
 
         {/* Rotas privadas */}
-        <Route path="/documentos" element={ <RotaPrivada> <Documentos /> </RotaPrivada>
+        <Route path="/documentos" element={<RotaPrivada> <Documentos /> </RotaPrivada>
         }
         />
 
         <Route
-          path="/institucional" element={ <RotaPrivada> <Institucional /> </RotaPrivada>
+          path="/institucional" element={<RotaPrivada> <Institucional /> </RotaPrivada>
           }
         />
 
-        <Route path="/perfil" element={ <RotaPrivada> <Perfil /> </RotaPrivada>
-          }
+        <Route path="/perfil" element={<RotaPrivada> <Perfil /> </RotaPrivada>
+        }
         />
 
-        <Route path="/acessibilidade" element={ <RotaPrivada> <Acessibilidade /> </RotaPrivada>
+        <Route path="/acessibilidade" element={<RotaPrivada> <Acessibilidade /> </RotaPrivada>
+        }
+        />
+        <Route path="/perguntas-frequentes" element={<RotaPrivada> <PerguntasFrequentes /> </RotaPrivada>
+        }
+        />
+        <Route
+          path="/documentos/novo"
+          element={
+            <RotaPrivada>
+              <CadastrarDocumento />
+            </RotaPrivada>
           }
         />
-        <Route path="/perguntas-frequentes" element={ <RotaPrivada> <PerguntasFrequentes /> </RotaPrivada>
+        <Route
+          path="/configuracoes"
+          element={
+            <RotaPrivada>
+              <Configuracoes />
+            </RotaPrivada>
           }
         />
-<Route
-  path="/documentos/novo"
-  element={
-    <RotaPrivada>
-      <CadastrarDocumento />
-    </RotaPrivada>
-  }
-/>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
