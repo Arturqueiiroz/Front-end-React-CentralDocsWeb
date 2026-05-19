@@ -101,17 +101,7 @@ function MenuLateral({ aberto, fecharMenu }: MenuLateralProps) {
               <span className="menu-icon">✦</span>
               Acessibilidade
             </Link>
-
-            <Link
-              to="/compartilhado"
-              className={`menu-item ${
-                itemAtivo("/compartilhado") ? "ativo" : ""
-              }`}
-              onClick={fecharMenu}
-            >
-              <span className="menu-icon">⇄</span>
-              Compartilhado
-            </Link>    
+  
             <Link
                 to="/perguntas-frequentes"
                 className={`menu-item ${
