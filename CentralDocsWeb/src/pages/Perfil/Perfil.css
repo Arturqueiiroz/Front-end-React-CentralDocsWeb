@@ -12,41 +12,55 @@
 /* TOPO DA PÁGINA */
 
 .perfil-topo {
-  margin-top: 100px;
+  margin-top: 70px;
   width: 100%;
   min-height: 150px;
   border-radius: 24px;
   padding: 34px 38px;
+
   display: flex;
   align-items: center;
+
   background:
-    radial-gradient(circle at top right, rgba(96, 165, 250, 0.28), transparent 34%),
-    linear-gradient(135deg, #0f172a 0%, #1e3a8a 58%, #2563eb 100%);
-  color: white;
-  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.14);
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.18), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 251, 255, 0.96) 55%, rgba(219, 234, 254, 0.92) 100%);
+
+  border: 1px solid #dbeafe;
+  color: #0f172a;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(12px);
 }
 
 .perfil-topo span {
   display: inline-block;
-  margin-bottom: 8px;
-  font-size: 13px;
-  font-weight: 800;
-  color: #bfdbfe;
-  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  padding: 7px 13px;
+
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
 }
 
 .perfil-topo h1 {
   margin: 0;
-  font-size: 38px;
-  font-weight: 800;
+  color: #020617;
+  font-size: 32px;
+  font-weight: 850;
   line-height: 1.1;
+  letter-spacing: -0.8px;
 }
 
 .perfil-topo p {
-  max-width: 620px;
-  margin: 10px 0 0;
-  color: #dbeafe;
+  max-width: 650px;
+  margin: 12px 0 0;
+  color: #475569;
   font-size: 15px;
   line-height: 1.6;
 }
@@ -84,11 +98,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #2563eb, #172554);
+  background: linear-gradient(135deg, #1100ff, #3251da);
   color: white;
   font-size: 40px;
   font-weight: 800;
-  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.28);
+  box-shadow: 0 12px 28px rgba(65, 125, 255, 0.28);
 }
 
 .perfil-card-usuario h2 {
