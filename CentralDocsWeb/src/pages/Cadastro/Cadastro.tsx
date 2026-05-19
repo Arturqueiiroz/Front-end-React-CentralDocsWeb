@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthLayout from "../../components/AuthLayout/AuthLayout";
 import "./Cadastro.css";
+import { API_URL } from "../../services/api";
 
 function Cadastro() {
   const navigate = useNavigate();
@@ -44,8 +45,7 @@ function Cadastro() {
     try {
       setCarregando(true);
 
-      const resposta = await fetch(
-        "https://localhost:7196/api/Usuario/CriarUsuario",
+      const resposta = await fetch(`${API_URL}/api/Usuario/CriarUsuario`,
         {
           method: "POST",
           headers: {

@@ -24,12 +24,11 @@ function PageHeader({
         <p>{descricao}</p>
       </div>
 
-      {textoBotao && (
-        <button className="page-header-button" onClick={onClickBotao}>
-          <span>+</span>
-          {textoBotao}
-        </button>
-      )}
+{textoBotao && (
+  <button className="page-header-button" onClick={onClickBotao}>
+    {textoBotao}
+  </button>
+)}
     </div>
   );
 }

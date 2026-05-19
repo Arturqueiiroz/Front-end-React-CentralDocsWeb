@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthLayout from "../../components/AuthLayout/AuthLayout";
 import "./Login.css";
+import { API_URL } from "../../services/api";
 
 function Login() {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ function Login() {
     try {
       setCarregando(true);
 
-      const resposta = await fetch("https://localhost:7196/api/Usuario/login", {
+      const resposta = await fetch(`${API_URL}/api/Usuario/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -14,7 +14,7 @@ import Institucional from "./pages/Institucional/Institucional";
 import Perfil from "./pages/Perfil/Perfil";
 import Acessibilidade from "./pages/Acessibilidade/Acessibilidade";
 import PerguntasFrequentes from "./pages/PerguntasFrequentes/PerguntasFrequentes";
-
+import CadastrarDocumento from "./pages/CadastrarDocumento/CadastrarDocumento";
 function Home() {
   return (
     <div className="app-wrapper">
@@ -66,6 +66,14 @@ function App() {
         <Route path="/perguntas-frequentes" element={ <RotaPrivada> <PerguntasFrequentes /> </RotaPrivada>
           }
         />
+<Route
+  path="/documentos/novo"
+  element={
+    <RotaPrivada>
+      <CadastrarDocumento />
+    </RotaPrivada>
+  }
+/>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

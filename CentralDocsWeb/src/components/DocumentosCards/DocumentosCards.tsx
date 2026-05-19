@@ -1,6 +1,11 @@
 import "./DocumentosCards.css";
+import type { Documento } from "../../services/documentoService";
 
-function DocumentosCards() {
+type Props = {
+  documentos: Documento[];
+};
+
+function DocumentosCards({ documentos }: Props) {
   return (
     <section className="documentos-cards">
       <div className="info-card storage-card">
@@ -9,8 +14,8 @@ function DocumentosCards() {
           <span className="status-disponivel">75% disponível</span>
         </div>
 
-        <p>Espaço utilizado</p>
-        <strong>2.5 GB / 10 GB</strong>
+        <p>Documentos cadastrados</p>
+        <strong>{documentos.length}</strong>
 
         <div className="storage-bar">
           <div></div>
@@ -21,8 +26,8 @@ function DocumentosCards() {
         <span className="security-icon">🛡</span>
         <h3>Proteção Blindada</h3>
         <p>
-          Seus documentos são criptografados com padrão AES-256 e protegidos por
-          biometria.
+          Seus documentos são protegidos por autenticação segura e acesso
+          controlado.
         </p>
       </div>
 
@@ -32,9 +37,9 @@ function DocumentosCards() {
           <a href="#">Ver histórico</a>
         </div>
 
-        <p>Último acesso</p>
-        <strong>Hoje, 14:22</strong>
-        <small>Via CentralDocs Web App</small>
+        <p>Última atualização</p>
+        <strong>Agora</strong>
+        <small>Dados carregados da API</small>
       </div>
     </section>
   );
