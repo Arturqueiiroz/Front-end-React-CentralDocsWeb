@@ -98,6 +98,47 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+/* =========================
+   TEMA ESCURO - EFFICIENCY
+========================= */
+
+body.tema-escuro .efficiency {
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 32%),
+    linear-gradient(180deg, #0f172a 0%, #020617 100%);
+}
+
+body.tema-escuro .efficiency-header h2 {
+  color: #f8fafc;
+}
+
+body.tema-escuro .efficiency-header p {
+  color: #94a3b8;
+}
+
+body.tema-escuro .feature-card {
+  background-color: rgba(15, 23, 42, 0.92);
+  border-color: #1e293b;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+body.tema-escuro .feature-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.32);
+}
+
+body.tema-escuro .feature-card h3 {
+  color: #f8fafc;
+}
+
+body.tema-escuro .feature-card p {
+  color: #94a3b8;
+}
+
+body.tema-escuro .feature-image {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
+}
+
 @media (max-width: 1024px) {
   .features-grid {
     grid-template-columns: 1fr 1fr;
