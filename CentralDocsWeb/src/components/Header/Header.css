@@ -208,6 +208,87 @@
   text-overflow: ellipsis;
 }
 
+/* =========================
+   TEMA ESCURO - HEADER
+========================= */
+
+body.tema-escuro .header {
+  background:
+    linear-gradient(90deg,
+      #020617 0%,
+      #0f172a 45%,
+      #172554 100%);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  border-bottom: 1px solid #1e293b;
+}
+
+body.tema-escuro .menu-btn span {
+  background: #e2e8f0;
+}
+
+body.tema-escuro .nav-lista li a {
+  color: #cbd5e1;
+}
+
+body.tema-escuro .nav-lista li a:hover {
+  color: #60a5fa;
+}
+
+body.tema-escuro .pesquisa-box {
+  background: #0f172a;
+  border-color: #334155;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+}
+
+body.tema-escuro .pesquisa-box:focus-within {
+  border-color: #3b82f6;
+  box-shadow:
+    0 0 0 4px rgba(59, 130, 246, 0.16),
+    0 12px 26px rgba(0, 0, 0, 0.28);
+}
+
+body.tema-escuro .search-icon {
+  color: #cbd5e1;
+}
+
+body.tema-escuro .pesquisa-box input {
+  color: #f8fafc;
+}
+
+body.tema-escuro .pesquisa-box input::placeholder {
+  color: #94a3b8;
+}
+
+body.tema-escuro .btn-login-header {
+  background: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 12px 26px rgba(37, 99, 235, 0.22);
+}
+
+body.tema-escuro .btn-login-header:hover {
+  background: #2563eb;
+}
+
+body.tema-escuro .perfil-header {
+  background: #0f172a;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+}
+
+body.tema-escuro .perfil-info span {
+  color: #94a3b8;
+}
+
+body.tema-escuro .perfil-info strong {
+  color: #f8fafc;
+}
+
+@media (max-width: 768px) {
+  body.tema-escuro .perfil-header {
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
 /* RESPONSIVO */
 
 @media (max-width: 1180px) {

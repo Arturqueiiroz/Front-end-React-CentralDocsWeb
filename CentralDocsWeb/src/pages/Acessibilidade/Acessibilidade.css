@@ -394,6 +394,166 @@
   transform: translateY(-2px);
 }
 
+/* =========================
+   TEMA ESCURO - ACESSIBILIDADE
+========================= */
+
+body.tema-escuro .acessibilidade-page {
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.22), transparent 35%),
+    linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  color: #e2e8f0;
+}
+
+body.tema-escuro .acessibilidade-breadcrumb {
+  color: #94a3b8;
+}
+
+/* HERO */
+
+body.tema-escuro .acessibilidade-hero-content {
+  background: rgba(15, 23, 42, 0.92);
+  border-color: #1e293b;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+body.tema-escuro .acessibilidade-hero-content h1 {
+  color: #f8fafc;
+}
+
+body.tema-escuro .acessibilidade-hero-content p {
+  color: #94a3b8;
+}
+
+body.tema-escuro .acessibilidade-hero-card {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+  box-shadow: 0 18px 45px rgba(37, 99, 235, 0.22);
+}
+
+body.tema-escuro .acessibilidade-hero-card span {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* CARDS */
+
+body.tema-escuro .acessibilidade-card,
+body.tema-escuro .acessibilidade-color-section {
+  background: rgba(15, 23, 42, 0.92);
+  border-color: #1e293b;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
+}
+
+body.tema-escuro .acessibilidade-card:hover {
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+}
+
+body.tema-escuro .acessibilidade-icon-box {
+  background: rgba(37, 99, 235, 0.18);
+  color: #93c5fd;
+}
+
+body.tema-escuro .acessibilidade-card-title h2,
+body.tema-escuro .acessibilidade-section-title h2 {
+  color: #f8fafc;
+}
+
+body.tema-escuro .acessibilidade-card-title p,
+body.tema-escuro .acessibilidade-section-title p {
+  color: #94a3b8;
+}
+
+body.tema-escuro .acessibilidade-option {
+  border-top-color: #1e293b;
+}
+
+body.tema-escuro .acessibilidade-option strong {
+  color: #f8fafc;
+}
+
+body.tema-escuro .acessibilidade-option p {
+  color: #94a3b8;
+}
+
+/* SWITCH */
+
+body.tema-escuro .acessibilidade-switch span {
+  background: #334155;
+}
+
+body.tema-escuro .acessibilidade-switch span::before {
+  background: #f8fafc;
+}
+
+body.tema-escuro .acessibilidade-switch input:checked + span {
+  background: #3b82f6;
+}
+
+/* BANNER */
+
+body.tema-escuro .acessibilidade-banner {
+  background:
+    radial-gradient(circle at right top, rgba(96, 165, 250, 0.2), transparent 30%),
+    linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.28);
+}
+
+body.tema-escuro .acessibilidade-banner-content button {
+  background: #f8fafc;
+  color: #1d4ed8;
+}
+
+body.tema-escuro .acessibilidade-banner-content button:hover {
+  background: #e0f2fe;
+}
+
+/* PERFIS DE CORES */
+
+body.tema-escuro .acessibilidade-color-card {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+body.tema-escuro .acessibilidade-color-card:hover {
+  border-color: #60a5fa;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+}
+
+body.tema-escuro .acessibilidade-color-card.active {
+  background: rgba(37, 99, 235, 0.16);
+  border-color: #3b82f6;
+}
+
+body.tema-escuro .acessibilidade-color-card strong {
+  color: #f8fafc;
+}
+
+body.tema-escuro .acessibilidade-color-card p {
+  color: #94a3b8;
+}
+
+/* BOTÕES */
+
+body.tema-escuro .btn-resetar {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-color: #334155 !important;
+}
+
+body.tema-escuro .btn-resetar:hover {
+  background: #1e293b;
+}
+
+body.tema-escuro .btn-salvar {
+  background: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.22);
+}
+
+body.tema-escuro .btn-salvar:hover {
+  background: #2563eb;
+}
+
 @media (max-width: 980px) {
   .acessibilidade-hero-content {
     flex-direction: column;

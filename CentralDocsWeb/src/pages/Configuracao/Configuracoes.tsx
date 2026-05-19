@@ -1,10 +1,31 @@
 // src/pages/Configuracoes/Configuracoes.tsx
 
+import { useEffect, useState } from "react";
 import "./Configuracoes.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 function Configuracoes() {
+    const [tema, setTema] = useState("claro");
+
+    useEffect(() => {
+        const temaSalvo = localStorage.getItem("tema") || "claro";
+
+        setTema(temaSalvo);
+
+        document.body.classList.remove("tema-claro", "tema-escuro");
+        document.body.classList.add(`tema-${temaSalvo}`);
+    }, []);
+
+    function alterarTema(novoTema: string) {
+        setTema(novoTema);
+
+        localStorage.setItem("tema", novoTema);
+
+        document.body.classList.remove("tema-claro", "tema-escuro");
+        document.body.classList.add(`tema-${novoTema}`);
+    }
+
     return (
         <>
             <Header />
@@ -30,13 +51,21 @@ function Configuracoes() {
 
                             <div className="tema-box">
 
-                                <button className="tema ativo">
+                                <button
+                                    type="button"
+                                    className={`tema ${tema === "claro" ? "ativo" : ""}`}
+                                    onClick={() => alterarTema("claro")}
+                                >
                                     <div className="tema-preview claro"></div>
 
                                     <span>Claro</span>
                                 </button>
 
-                                <button className="tema">
+                                <button
+                                    type="button"
+                                    className={`tema ${tema === "escuro" ? "ativo" : ""}`}
+                                    onClick={() => alterarTema("escuro")}
+                                >
                                     <div className="tema-preview escuro"></div>
 
                                     <span>Escuro</span>
@@ -112,7 +141,7 @@ function Configuracoes() {
                                     </p>
                                 </div>
 
-                                <button>
+                                <button type="button">
                                     Habilitar
                                 </button>
                             </div>
@@ -133,7 +162,7 @@ function Configuracoes() {
                                 </span>
                             </div>
 
-                            <button className="senha-btn">
+                            <button type="button" className="senha-btn">
                                 Mudar senha
                             </button>
                         </section>
@@ -162,7 +191,7 @@ function Configuracoes() {
                                 </option>
                             </select>
 
-                            <button className="danger">
+                            <button type="button" className="danger">
                                 Desativar conta
                             </button>
                         </section>
