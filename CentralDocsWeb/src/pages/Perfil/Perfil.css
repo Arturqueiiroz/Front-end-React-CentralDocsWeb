@@ -12,6 +12,7 @@
 /* TOPO DA PÁGINA */
 
 .perfil-topo {
+  margin-top: 100px;
   width: 100%;
   min-height: 150px;
   border-radius: 24px;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthLayout from "../../components/AuthLayout/AuthLayout";
-import "./Cadastro.css";
 import { API_URL } from "../../services/api";
+import "./Cadastro.css";
 
 function Cadastro() {
   const navigate = useNavigate();
@@ -31,8 +31,18 @@ function Cadastro() {
       return;
     }
 
+    if (!email.includes("@")) {
+      setErro("Digite um e-mail válido.");
+      return;
+    }
+
     if (cpf.length !== 11) {
       setErro("O CPF deve conter exatamente 11 números.");
+      return;
+    }
+
+    if (senha.length < 6) {
+      setErro("A senha deve ter pelo menos 6 caracteres.");
       return;
     }
 
@@ -40,31 +50,39 @@ function Cadastro() {
       setErro("As senhas não coincidem.");
       return;
     }
-    
 
     try {
       setCarregando(true);
 
-      const resposta = await fetch(`${API_URL}/api/Usuario/CriarUsuario`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            nome,
-            cpf,
-            email,
-            senha,
-            confirmarSenha,
-          }),
-        }
-      );
+      const resposta = await fetch(`${API_URL}/api/Usuario/CriarUsuario`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nome,
+          cpf,
+          email,
+          senha,
+          confirmarSenha,
+        }),
+      });
 
-      const dados = await resposta.json();
+      const texto = await resposta.text();
 
-      if (!resposta.ok || dados.erro || dados.Erro) {
-        setErro(dados.mensagem || dados.Mensagem || "Erro ao criar usuário.");
+      let dados;
+      try {
+        dados = texto ? JSON.parse(texto) : null;
+      } catch {
+        dados = texto;
+      }
+
+      if (!resposta.ok || dados?.erro || dados?.Erro) {
+        setErro(
+          typeof dados === "string"
+            ? dados
+            : dados?.mensagem || dados?.Mensagem || "Erro ao criar usuário."
+        );
         return;
       }
 
@@ -95,9 +113,10 @@ function Cadastro() {
       </div>
 
       <form className="cadastro-form" onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className="cadastro-form-group">
           <label htmlFor="nome">Nome</label>
-          <div className="input-wrapper">
+
+          <div className="cadastro-input-wrapper">
             <input
               id="nome"
               type="text"
@@ -108,9 +127,10 @@ function Cadastro() {
           </div>
         </div>
 
-        <div className="form-group">
+        <div className="cadastro-form-group">
           <label htmlFor="cpf">CPF</label>
-          <div className="input-wrapper">
+
+          <div className="cadastro-input-wrapper">
             <input
               id="cpf"
               type="text"
@@ -122,9 +142,10 @@ function Cadastro() {
           </div>
         </div>
 
-        <div className="form-group">
+        <div className="cadastro-form-group">
           <label htmlFor="email">E-mail</label>
-          <div className="input-wrapper">
+
+          <div className="cadastro-input-wrapper">
             <input
               id="email"
               type="email"
@@ -135,10 +156,11 @@ function Cadastro() {
           </div>
         </div>
 
-        <div className="password-row">
-          <div className="form-group">
+        <div className="cadastro-password-row">
+          <div className="cadastro-form-group">
             <label htmlFor="senha">Senha</label>
-            <div className="input-wrapper">
+
+            <div className="cadastro-input-wrapper">
               <input
                 id="senha"
                 type={mostrarSenha ? "text" : "password"}
@@ -149,17 +171,19 @@ function Cadastro() {
 
               <button
                 type="button"
-                className="btn-eye"
+                className="cadastro-btn-eye"
                 onClick={() => setMostrarSenha(!mostrarSenha)}
+                aria-label={mostrarSenha ? "Ocultar senha" : "Mostrar senha"}
               >
                 👁️
               </button>
             </div>
           </div>
 
-          <div className="form-group">
+          <div className="cadastro-form-group">
             <label htmlFor="confirmarSenha">Confirmar senha</label>
-            <div className="input-wrapper">
+
+            <div className="cadastro-input-wrapper">
               <input
                 id="confirmarSenha"
                 type={mostrarConfirmarSenha ? "text" : "password"}
@@ -170,9 +194,12 @@ function Cadastro() {
 
               <button
                 type="button"
-                className="btn-eye"
+                className="cadastro-btn-eye"
                 onClick={() =>
                   setMostrarConfirmarSenha(!mostrarConfirmarSenha)
+                }
+                aria-label={
+                  mostrarConfirmarSenha ? "Ocultar senha" : "Mostrar senha"
                 }
               >
                 👁️
