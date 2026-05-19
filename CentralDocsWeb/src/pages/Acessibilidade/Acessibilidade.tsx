@@ -1,236 +1,198 @@
-import './Acessibilidade.css'
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import "./Acessibilidade.css";
 
 import {
-    Eye,
-    Keyboard,
-    Volume2,
-    Palette
+  Eye,
+  Keyboard,
+  Volume2,
+  Palette,
+  CheckCircle,
+  MousePointerClick,
 } from "lucide-react";
 
 function Acessibilidade() {
-    return (
-        <div className="layout">
-            <div className="content">
-                <main className="main-content">
-
-                    <span className="breadcrumb">
-                        Configurações &gt; Acessibilidade
-                    </span>
-
-                    <h1>Acessibilidade</h1>
-
-                    <p className="description">
-                        Personalize sua experiência no CentralDocs.
-                    </p>
-
-                    <section className="cards">
-
-                        {/* VISUAL */}
-
-                        <div className="card">
-
-                            <div className="card-title">
-
-                                <Eye size={22} />
-
-                                <h2>Visual</h2>
-
-                            </div>
-
-                            <div className="option">
-
-                                <div>
-                                    <strong>Modo de alto contraste</strong>
-
-                                    <p>
-                                        Aumenta a visibilidade da interface.
-                                    </p>
-                                </div>
-
-                                <label className="switch">
-                                    <input type="checkbox" />
-                                    <span className="slider"></span>
-                                </label>
-
-                            </div>
-
-                            <div className="option">
-
-                                <div>
-                                    <strong>Redução de movimento</strong>
-
-                                    <p>
-                                        Minimiza animações do sistema.
-                                    </p>
-                                </div>
-
-                                <label className="switch">
-                                    <input type="checkbox" />
-                                    <span className="slider"></span>
-                                </label>
-
-                            </div>
-
-                        </div>
-
-                        {/* NAVEGAÇÃO */}
-
-                        <div className="card">
-
-                            <div className="card-title">
-
-                                <Keyboard size={22} />
-
-                                <h2>Navegação</h2>
-
-                            </div>
-
-                            <div className="option">
-
-                                <div>
-                                    <strong>Atalhos de teclado</strong>
-
-                                    <p>
-                                        Navegação rápida e eficiente.
-                                    </p>
-                                </div>
-
-                                <label className="switch">
-                                    <input type="checkbox" />
-                                    <span className="slider"></span>
-                                </label>
-
-                            </div>
-
-                            <div className="option">
-
-                                <div>
-                                    <strong>Cabeçalhos fixos</strong>
-
-                                    <p>
-                                        Mantém títulos visíveis.
-                                    </p>
-                                </div>
-
-                                <label className="switch">
-                                    <input type="checkbox" />
-                                    <span className="slider"></span>
-                                </label>
-
-                            </div>
-
-                        </div>
-
-                    </section>
-
-                    {/* BANNER */}
-
-                    <section className="banner">
-
-                        <div className="banner-content">
-
-                            <span className="tag">
-                                Otimização de voz
-                            </span>
-
-                            <div className="banner-title">
-
-                                <Volume2 size={28} />
-
-                                <h2>Leitor de tela avançado</h2>
-
-                            </div>
-
-                            <p>
-                                Compatível com NVDA, JAWS e VoiceOver.
-                            </p>
-
-                            <button>
-                                Configurar narração
-                            </button>
-
-                        </div>
-
-                    </section>
-
-                    {/* CORES */}
-
-                    <section className="color-section">
-
-                        <div className="card-title">
-
-                            <Palette size={22} />
-
-                            <h2>Perfis de cores</h2>
-
-                        </div>
-
-                        <div className="colors">
-
-                            <div className="color-card active-color">
-
-                                <div className="color blue"></div>
-
-                                <strong>Azul padrão</strong>
-
-                                <p>Padrão CentralDocs</p>
-
-                            </div>
-
-                            <div className="color-card">
-
-                                <div className="color dark"></div>
-
-                                <strong>Monocromático</strong>
-
-                                <p>Maior contraste visual</p>
-
-                            </div>
-
-                            <div className="color-card">
-
-                                <div className="color orange"></div>
-
-                                <strong>Protanopia</strong>
-
-                                <p>Adaptação vermelho-verde</p>
-
-                            </div>
-
-                            <div className="color-card">
-
-                                <div className="color green"></div>
-
-                                <strong>Tritanopia</strong>
-
-                                <p>Adaptação azul-amarelo</p>
-
-                            </div>
-
-                        </div>
-
-                    </section>
-
-                    {/* BOTÕES */}
-
-                    <div className="actions">
-
-                        <button className="secondary">
-                            Redefinir
-                        </button>
-
-                        <button className="primary">
-                            Salvar preferências
-                        </button>
-
-                    </div>
-
-                </main>
-
+  return (
+    <div className="acessibilidade-page">
+      <Header />
+
+      <main className="acessibilidade-main">
+        <section className="acessibilidade-hero">
+          <span className="acessibilidade-breadcrumb">
+            CentralDocs &gt; Acessibilidade
+          </span>
+
+          <div className="acessibilidade-hero-content">
+            <div>
+              <h1>Acessibilidade</h1>
+
+              <p>
+                Personalize sua experiência no CentralDocs para navegar com
+                mais conforto, clareza e autonomia.
+              </p>
             </div>
 
+            <div className="acessibilidade-hero-card">
+              <CheckCircle size={28} />
+
+              <div>
+                <strong>Experiência inclusiva</strong>
+                <span>Recursos pensados para diferentes necessidades.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="acessibilidade-cards">
+          <div className="acessibilidade-card">
+            <div className="acessibilidade-card-title">
+              <div className="acessibilidade-icon-box">
+                <Eye size={22} />
+              </div>
+
+              <div>
+                <h2>Visual</h2>
+                <p>Ajustes para melhorar a leitura da interface.</p>
+              </div>
+            </div>
+
+            <div className="acessibilidade-option">
+              <div>
+                <strong>Modo de alto contraste</strong>
+                <p>Aumenta a visibilidade dos textos, botões e elementos.</p>
+              </div>
+
+              <label className="acessibilidade-switch">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+            </div>
+
+            <div className="acessibilidade-option">
+              <div>
+                <strong>Redução de movimento</strong>
+                <p>Diminui animações e transições para mais conforto.</p>
+              </div>
+
+              <label className="acessibilidade-switch">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+            </div>
+          </div>
+
+          <div className="acessibilidade-card">
+            <div className="acessibilidade-card-title">
+              <div className="acessibilidade-icon-box">
+                <Keyboard size={22} />
+              </div>
+
+              <div>
+                <h2>Navegação</h2>
+                <p>Opções para facilitar o uso pelo teclado.</p>
+              </div>
+            </div>
+
+            <div className="acessibilidade-option">
+              <div>
+                <strong>Atalhos de teclado</strong>
+                <p>Permite navegar rapidamente entre áreas importantes.</p>
+              </div>
+
+              <label className="acessibilidade-switch">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+            </div>
+
+            <div className="acessibilidade-option">
+              <div>
+                <strong>Cabeçalhos fixos</strong>
+                <p>Mantém títulos e menus visíveis durante a navegação.</p>
+              </div>
+
+              <label className="acessibilidade-switch">
+                <input type="checkbox" />
+                <span></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section className="acessibilidade-banner">
+          <div className="acessibilidade-banner-content">
+            <span>Otimização de voz</span>
+
+            <div className="acessibilidade-banner-title">
+              <Volume2 size={30} />
+              <h2>Leitor de tela avançado</h2>
+            </div>
+
+            <p>
+              Compatível com tecnologias assistivas como NVDA, JAWS e
+              VoiceOver, ajudando na leitura e navegação dos documentos.
+            </p>
+
+            <button type="button">
+              Configurar narração
+              <MousePointerClick size={18} />
+            </button>
+          </div>
+        </section>
+
+        <section className="acessibilidade-color-section">
+          <div className="acessibilidade-section-title">
+            <div className="acessibilidade-icon-box">
+              <Palette size={22} />
+            </div>
+
+            <div>
+              <h2>Perfis de cores</h2>
+              <p>Escolha uma combinação visual mais confortável para você.</p>
+            </div>
+          </div>
+
+          <div className="acessibilidade-colors">
+            <button className="acessibilidade-color-card active" type="button">
+              <div className="acessibilidade-color azul"></div>
+              <strong>Azul padrão</strong>
+              <p>Padrão CentralDocs</p>
+            </button>
+
+            <button className="acessibilidade-color-card" type="button">
+              <div className="acessibilidade-color escuro"></div>
+              <strong>Monocromático</strong>
+              <p>Maior contraste visual</p>
+            </button>
+
+            <button className="acessibilidade-color-card" type="button">
+              <div className="acessibilidade-color laranja"></div>
+              <strong>Protanopia</strong>
+              <p>Adaptação vermelho-verde</p>
+            </button>
+
+            <button className="acessibilidade-color-card" type="button">
+              <div className="acessibilidade-color verde"></div>
+              <strong>Tritanopia</strong>
+              <p>Adaptação azul-amarelo</p>
+            </button>
+          </div>
+        </section>
+
+        <div className="acessibilidade-actions">
+          <button className="btn-resetar" type="button">
+            Redefinir
+          </button>
+
+          <button className="btn-salvar" type="button">
+            Salvar preferências
+          </button>
         </div>
-    );
+      </main>
+
+      <Footer />
+    </div>
+  );
 }
 
 export default Acessibilidade;
