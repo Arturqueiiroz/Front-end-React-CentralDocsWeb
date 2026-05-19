@@ -1,0 +1,51 @@
+/* =========================
+   TEMA ESCURO - INSTITUTIONAL CARDS
+========================= */
+
+body.tema-escuro .institutional-cards {
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.18), transparent 32%),
+    linear-gradient(180deg, #0f172a 0%, #020617 100%);
+}
+
+body.tema-escuro .institutional-cards span {
+  color: #93c5fd;
+}
+
+body.tema-escuro .institutional-cards h2 {
+  color: #f8fafc;
+}
+
+body.tema-escuro .large-card,
+body.tema-escuro .mini-card {
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid #1e293b;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+}
+
+body.tema-escuro .large-card h3,
+body.tema-escuro .mini-card h4 {
+  color: #f8fafc;
+}
+
+body.tema-escuro .large-card p,
+body.tema-escuro .mini-card p {
+  color: #94a3b8;
+}
+
+body.tema-escuro .blue-card {
+  background:
+    radial-gradient(circle at top right, rgba(96, 165, 250, 0.18), transparent 34%),
+    linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
+  color: #ffffff;
+  border: 1px solid #1d4ed8;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+}
+
+body.tema-escuro .blue-card h3 {
+  color: #ffffff;
+}
+
+body.tema-escuro .blue-card p {
+  color: #dbeafe;
+}

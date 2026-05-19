@@ -47,3 +47,12 @@
   padding: 20px;
   border-radius: 12px;
 }
+
+/* =========================
+   TEMA ESCURO - PÁGINA INSTITUCIONAL
+========================= */
+
+body.tema-escuro .institucional-page {
+  background: #020617;
+  color: #e2e8f0;
+}

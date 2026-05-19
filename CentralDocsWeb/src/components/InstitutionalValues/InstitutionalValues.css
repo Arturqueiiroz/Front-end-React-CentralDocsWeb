@@ -16,3 +16,35 @@
 
   border-left: 4px solid #2f63ff;
 }
+
+/* =========================
+   TEMA ESCURO - INSTITUTIONAL VALUES
+========================= */
+
+body.tema-escuro .institutional-values {
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 32%),
+    linear-gradient(180deg, #020617 0%, #0f172a 100%);
+}
+
+body.tema-escuro .value-box {
+  background: rgba(15, 23, 42, 0.92);
+  border-left-color: #3b82f6;
+  border-top: 1px solid #1e293b;
+  border-right: 1px solid #1e293b;
+  border-bottom: 1px solid #1e293b;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+}
+
+body.tema-escuro .value-box h3 {
+  color: #f8fafc;
+}
+
+body.tema-escuro .value-box p,
+body.tema-escuro .value-box li {
+  color: #94a3b8;
+}
+
+body.tema-escuro .value-box ul {
+  color: #94a3b8;
+}

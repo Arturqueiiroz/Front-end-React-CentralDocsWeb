@@ -24,3 +24,22 @@
   width: 500px;
   line-height: 1.6;
 }
+
+/* =========================
+   TEMA ESCURO - INSTITUTIONAL SECTION
+========================= */
+
+body.tema-escuro .institutional-section {
+  background:
+    radial-gradient(circle at top right, rgba(96, 165, 250, 0.22), transparent 34%),
+    linear-gradient(90deg, #020617 0%, #0f172a 45%, #172554 100%);
+  color: #ffffff;
+}
+
+body.tema-escuro .institutional-content h1 {
+  color: #f8fafc;
+}
+
+body.tema-escuro .institutional-content p {
+  color: #cbd5e1;
+}
