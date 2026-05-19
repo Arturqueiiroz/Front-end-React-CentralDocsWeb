@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Header from "../../components/Header/Header";
 import MenuLateral from "../../components/MenuLateral/MenuLateral";
 import "./Perfil.css";
 
@@ -18,7 +19,7 @@ type Usuario = {
 };
 
 function Perfil() {
-  const [menuAberto, setMenuAberto] = useState(true);
+  const [menuAberto, setMenuAberto] = useState(false);
 
   const [usuario, setUsuario] = useState<Usuario | null>(null);
 
@@ -105,7 +106,9 @@ function Perfil() {
   };
 
   return (
-    <div className="perfil-layout">
+    <div className="perfil-page">
+      <Header />
+
       <MenuLateral
         aberto={menuAberto}
         fecharMenu={() => setMenuAberto(false)}
@@ -120,11 +123,19 @@ function Perfil() {
               Veja e atualize suas informações pessoais da sua conta.
             </p>
           </div>
+
+          <button
+            type="button"
+            className="btn-abrir-menu"
+            onClick={() => setMenuAberto(true)}
+          >
+            Abrir menu
+          </button>
         </section>
 
         <section className="perfil-grid">
           <aside className="perfil-card-usuario">
-            <div className="perfil-avatar">
+            <div className="perfil-main-avatar">
               {pegarPrimeiraLetra()}
             </div>
 
