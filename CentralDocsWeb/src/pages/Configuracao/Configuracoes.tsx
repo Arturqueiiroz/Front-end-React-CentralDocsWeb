@@ -154,7 +154,7 @@ function Configuracoes() {
                                 </option>
                             </select>
 
-                            <label>Timezone</label>
+                            <label>Horário</label>
 
                             <select>
                                 <option>
