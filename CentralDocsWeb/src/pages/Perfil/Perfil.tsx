@@ -115,22 +115,14 @@ function Perfil() {
       />
 
       <main className="perfil-content">
-        <section className="perfil-hero">
+        <section className="perfil-topo">
           <div>
-            <span>CentralDocs</span>
+            <span>Configurações da conta</span>
             <h1>Meu perfil</h1>
             <p>
-              Veja e atualize suas informações pessoais da sua conta.
+              Consulte seus dados pessoais e atualize as informações da sua conta.
             </p>
           </div>
-
-          <button
-            type="button"
-            className="btn-abrir-menu"
-            onClick={() => setMenuAberto(true)}
-          >
-            Abrir menu
-          </button>
         </section>
 
         <section className="perfil-grid">
@@ -152,7 +144,7 @@ function Perfil() {
             <div className="perfil-card-header">
               <div>
                 <h3>Informações pessoais</h3>
-                <p>Esses dados são usados para identificar sua conta.</p>
+                <p>Dados vinculados ao seu cadastro no CentralDocs.</p>
               </div>
 
               {!editando && (
@@ -234,9 +226,9 @@ function Perfil() {
 
         <section className="perfil-card-seguranca">
           <div>
-            <h3>Segurança</h3>
+            <h3>Segurança da conta</h3>
             <p>
-              Em breve você poderá alterar sua senha e configurar opções de segurança.
+              Em breve você poderá alterar sua senha e configurar novas opções de proteção.
             </p>
           </div>
 
