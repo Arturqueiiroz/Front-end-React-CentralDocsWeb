@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthLayout from "../../components/AuthLayout/AuthLayout";
 import "./Login.css";
-import { API_URL } from "../../services/api";
+import { API_URL, USE_MOCK } from "../../services/api";
 
 function Login() {
   const navigate = useNavigate();
@@ -15,6 +15,23 @@ function Login() {
   const [erro, setErro] = useState("");
   const [carregando, setCarregando] = useState(false);
 
+  function efetuarLoginMock() {
+    localStorage.setItem("token", "mock_token_123456");
+    localStorage.setItem(
+      "usuario",
+      JSON.stringify({
+        id: 1,
+        nome: email ? email.split("@")[0] : "Usuário Demo",
+        email: email || "demo@centraldocs.com",
+      })
+    );
+
+    setMensagem("Login simulado com sucesso (Modo Mock)!");
+    setTimeout(() => {
+      navigate("/");
+    }, 800);
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -23,6 +40,11 @@ function Login() {
 
     if (!email || !senha) {
       setErro("Preencha todos os campos.");
+      return;
+    }
+
+    if (USE_MOCK) {
+      efetuarLoginMock();
       return;
     }
 
@@ -64,8 +86,8 @@ function Login() {
         navigate("/");
       }, 1000);
     } catch (error) {
-      setErro("Não foi possível conectar. Aguarde um momento e tente novamente.");
-      console.error(error);
+      console.warn("Erro de conexão na API, alternando para login mockado:", error);
+      efetuarLoginMock();
     } finally {
       setCarregando(false);
     }

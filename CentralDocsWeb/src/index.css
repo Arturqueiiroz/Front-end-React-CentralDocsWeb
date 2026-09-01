@@ -35,6 +35,109 @@ a {
 
 /* Tema escuro base do site */
 body.tema-escuro {
-  background: #020617;
+  background: #090f1e;
   color: #e2e8f0;
+}
+
+/* ===================================
+   PERFIS DE CORES DE ACESSIBILIDADE
+   =================================== */
+
+/* PROTANOPIA (Laranja / Âmbar) */
+body.cor-protanopia .btn-primary,
+body.cor-protanopia .btn-login-header,
+body.cor-protanopia .cta-button,
+body.cor-protanopia .page-header-button,
+body.cor-protanopia .btn-salvar,
+body.cor-protanopia .usuario-avatar,
+body.cor-protanopia .perfil-avatar {
+  background: linear-gradient(135deg, #ea580c, #f97316) !important;
+  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.28) !important;
+}
+
+body.cor-protanopia .btn-primary:hover,
+body.cor-protanopia .btn-login-header:hover,
+body.cor-protanopia .cta-button:hover,
+body.cor-protanopia .page-header-button:hover,
+body.cor-protanopia .btn-salvar:hover {
+  background: linear-gradient(135deg, #c2410c, #ea580c) !important;
+}
+
+body.cor-protanopia .menu-item.ativo,
+body.cor-protanopia .menu-item:hover,
+body.cor-protanopia .nav-lista li a:hover,
+body.cor-protanopia .acessibilidade-breadcrumb,
+body.cor-protanopia .resumo-icon.resumo-blue {
+  color: #ea580c !important;
+}
+
+body.cor-protanopia .menu-item.ativo::after,
+body.cor-protanopia .acessibilidade-switch input:checked + span {
+  background: #ea580c !important;
+}
+
+/* TRITANOPIA (Verde Esmeralda) */
+body.cor-tritanopia .btn-primary,
+body.cor-tritanopia .btn-login-header,
+body.cor-tritanopia .cta-button,
+body.cor-tritanopia .page-header-button,
+body.cor-tritanopia .btn-salvar,
+body.cor-tritanopia .usuario-avatar,
+body.cor-tritanopia .perfil-avatar {
+  background: linear-gradient(135deg, #059669, #10b981) !important;
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.28) !important;
+}
+
+body.cor-tritanopia .btn-primary:hover,
+body.cor-tritanopia .btn-login-header:hover,
+body.cor-tritanopia .cta-button:hover,
+body.cor-tritanopia .page-header-button:hover,
+body.cor-tritanopia .btn-salvar:hover {
+  background: linear-gradient(135deg, #047857, #059669) !important;
+}
+
+body.cor-tritanopia .menu-item.ativo,
+body.cor-tritanopia .menu-item:hover,
+body.cor-tritanopia .nav-lista li a:hover,
+body.cor-tritanopia .acessibilidade-breadcrumb,
+body.cor-tritanopia .resumo-icon.resumo-blue {
+  color: #059669 !important;
+}
+
+body.cor-tritanopia .menu-item.ativo::after,
+body.cor-tritanopia .acessibilidade-switch input:checked + span {
+  background: #059669 !important;
+}
+
+/* MONOCROMÁTICO (Cinza Alto Contraste) */
+body.cor-monocromatico .btn-primary,
+body.cor-monocromatico .btn-login-header,
+body.cor-monocromatico .cta-button,
+body.cor-monocromatico .page-header-button,
+body.cor-monocromatico .btn-salvar,
+body.cor-monocromatico .usuario-avatar,
+body.cor-monocromatico .perfil-avatar {
+  background: linear-gradient(135deg, #334155, #475569) !important;
+  box-shadow: 0 8px 20px rgba(51, 65, 85, 0.28) !important;
+}
+
+body.cor-monocromatico .btn-primary:hover,
+body.cor-monocromatico .btn-login-header:hover,
+body.cor-monocromatico .cta-button:hover,
+body.cor-monocromatico .page-header-button:hover,
+body.cor-monocromatico .btn-salvar:hover {
+  background: linear-gradient(135deg, #1e293b, #334155) !important;
+}
+
+body.cor-monocromatico .menu-item.ativo,
+body.cor-monocromatico .menu-item:hover,
+body.cor-monocromatico .nav-lista li a:hover,
+body.cor-monocromatico .acessibilidade-breadcrumb,
+body.cor-monocromatico .resumo-icon.resumo-blue {
+  color: #334155 !important;
+}
+
+body.cor-monocromatico .menu-item.ativo::after,
+body.cor-monocromatico .acessibilidade-switch input:checked + span {
+  background: #334155 !important;
 }

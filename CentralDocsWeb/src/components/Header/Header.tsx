@@ -4,7 +4,17 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/img/LogoCentralDocsNova.png";
 import MenuLateral from "../MenuLateral/MenuLateral";
 
-function Header() {
+type HeaderProps = {
+  exibirMenuLateral?: boolean;
+  exibirNav?: boolean;
+  exibirBusca?: boolean;
+};
+
+function Header({
+  exibirMenuLateral = true,
+  exibirNav = true,
+  exibirBusca = true,
+}: HeaderProps) {
   const [menuAberto, setMenuAberto] = useState(false);
   const [pesquisa, setPesquisa] = useState("");
 
@@ -13,6 +23,11 @@ function Header() {
 
   // Tratamento seguro para o JSON do localStorage
   const usuario = usuarioSalvo ? JSON.parse(usuarioSalvo) : null;
+
+  // Se o usuário estiver logado (possui token), exibimos o menu lateral, navegação e busca
+  const deveExibirMenuLateral = Boolean(token) || exibirMenuLateral;
+  const deveExibirNav = Boolean(token) || exibirNav;
+  const deveExibirBusca = Boolean(token) || exibirBusca;
 
   function abrirMenu() {
     setMenuAberto(true);
@@ -34,57 +49,65 @@ function Header() {
 
   return (
     <>
-      <MenuLateral aberto={menuAberto} fecharMenu={fecharMenu} />
+      {deveExibirMenuLateral && (
+        <MenuLateral aberto={menuAberto} fecharMenu={fecharMenu} />
+      )}
 
       <header className="header">
         <div className="container-header">
           <div className="header-left">
-            <button
-              className="menu-btn"
-              aria-label="Abrir menu"
-              onClick={abrirMenu}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
+            {deveExibirMenuLateral && (
+              <button
+                className="menu-btn"
+                aria-label="Abrir menu"
+                onClick={abrirMenu}
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            )}
 
             <Link to="/" className="header-brand">
               <img src={logo} alt="CentralDocs Logo" className="logo-img" />
             </Link>
           </div>
 
-          <nav className="header-nav">
-            <ul className="nav-lista">
-              <li>
-                <Link to="/documentos">Documentos</Link>
-              </li>
+          {deveExibirNav && (
+            <nav className="header-nav">
+              <ul className="nav-lista">
+                <li>
+                  <Link to="/documentos">Documentos</Link>
+                </li>
 
-              <li>
-                <Link to="/Institucional">Sobre nós</Link>
-              </li>
+                <li>
+                  <Link to="/Institucional">Sobre nós</Link>
+                </li>
 
-              <li>
-                <Link to="/recentes">Recentes</Link>
-              </li>
-            </ul>
-          </nav>
+                <li>
+                  <Link to="/recentes">Recentes</Link>
+                </li>
+              </ul>
+            </nav>
+          )}
 
           <div className="header-acoes">
-            <form className="pesquisa-box" onSubmit={handlePesquisar}>
-              <span className="search-icon">⌕</span>
+            {deveExibirBusca && (
+              <form className="pesquisa-box" onSubmit={handlePesquisar}>
+                <span className="search-icon">⌕</span>
 
-              <input
-                type="text"
-                placeholder="Digite o que você procura..."
-                value={pesquisa}
-                onChange={(e) => setPesquisa(e.target.value)}
-              />
-            </form>
+                <input
+                  type="text"
+                  placeholder="Digite o que você procura..."
+                  value={pesquisa}
+                  onChange={(e) => setPesquisa(e.target.value)}
+                />
+              </form>
+            )}
 
             {!token ? (
               <Link to="/login" className="btn-login-header">
-                Login
+                Entrar
               </Link>
             ) : (
               <div className="perfil-header">

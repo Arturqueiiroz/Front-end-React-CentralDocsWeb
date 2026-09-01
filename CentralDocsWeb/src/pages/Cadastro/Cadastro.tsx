@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthLayout from "../../components/AuthLayout/AuthLayout";
-import { API_URL } from "../../services/api";
+import { API_URL, USE_MOCK } from "../../services/api";
 import "./Cadastro.css";
 
 function Cadastro() {
@@ -19,6 +19,13 @@ function Cadastro() {
   const [mensagem, setMensagem] = useState("");
   const [erro, setErro] = useState("");
   const [carregando, setCarregando] = useState(false);
+
+  function efetuarCadastroMock() {
+    setMensagem("Cadastro realizado com sucesso (Modo Mock)! Redirecionando para login...");
+    setTimeout(() => {
+      navigate("/login");
+    }, 1500);
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,6 +55,11 @@ function Cadastro() {
 
     if (senha !== confirmarSenha) {
       setErro("As senhas não coincidem.");
+      return;
+    }
+
+    if (USE_MOCK) {
+      efetuarCadastroMock();
       return;
     }
 

@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import "./Acessibilidade.css";
@@ -12,6 +13,29 @@ import {
 } from "lucide-react";
 
 function Acessibilidade() {
+  const [perfilCor, setPerfilCor] = useState(() => {
+    return localStorage.getItem("perfilCor") || "padrao";
+  });
+
+  useEffect(() => {
+    document.body.classList.remove(
+      "cor-padrao",
+      "cor-monocromatico",
+      "cor-protanopia",
+      "cor-tritanopia"
+    );
+    document.body.classList.add(`cor-${perfilCor}`);
+  }, [perfilCor]);
+
+  function alterarPerfilCor(novoPerfil: string) {
+    setPerfilCor(novoPerfil);
+    localStorage.setItem("perfilCor", novoPerfil);
+  }
+
+  function redefinir() {
+    alterarPerfilCor("padrao");
+  }
+
   return (
     <div className="acessibilidade-page">
       <Header />
@@ -153,25 +177,49 @@ function Acessibilidade() {
           </div>
 
           <div className="acessibilidade-colors">
-            <button className="acessibilidade-color-card active" type="button">
+            <button
+              className={`acessibilidade-color-card ${
+                perfilCor === "padrao" ? "active" : ""
+              }`}
+              type="button"
+              onClick={() => alterarPerfilCor("padrao")}
+            >
               <div className="acessibilidade-color azul"></div>
               <strong>Azul padrão</strong>
               <p>Padrão CentralDocs</p>
             </button>
 
-            <button className="acessibilidade-color-card" type="button">
+            <button
+              className={`acessibilidade-color-card ${
+                perfilCor === "monocromatico" ? "active" : ""
+              }`}
+              type="button"
+              onClick={() => alterarPerfilCor("monocromatico")}
+            >
               <div className="acessibilidade-color escuro"></div>
               <strong>Monocromático</strong>
               <p>Maior contraste visual</p>
             </button>
 
-            <button className="acessibilidade-color-card" type="button">
+            <button
+              className={`acessibilidade-color-card ${
+                perfilCor === "protanopia" ? "active" : ""
+              }`}
+              type="button"
+              onClick={() => alterarPerfilCor("protanopia")}
+            >
               <div className="acessibilidade-color laranja"></div>
               <strong>Protanopia</strong>
               <p>Adaptação vermelho-verde</p>
             </button>
 
-            <button className="acessibilidade-color-card" type="button">
+            <button
+              className={`acessibilidade-color-card ${
+                perfilCor === "tritanopia" ? "active" : ""
+              }`}
+              type="button"
+              onClick={() => alterarPerfilCor("tritanopia")}
+            >
               <div className="acessibilidade-color verde"></div>
               <strong>Tritanopia</strong>
               <p>Adaptação azul-amarelo</p>
@@ -180,11 +228,15 @@ function Acessibilidade() {
         </section>
 
         <div className="acessibilidade-actions">
-          <button className="btn-resetar" type="button">
+          <button className="btn-resetar" type="button" onClick={redefinir}>
             Redefinir
           </button>
 
-          <button className="btn-salvar" type="button">
+          <button
+            className="btn-salvar"
+            type="button"
+            onClick={() => alterarPerfilCor(perfilCor)}
+          >
             Salvar preferências
           </button>
         </div>

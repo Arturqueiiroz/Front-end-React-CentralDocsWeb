@@ -22,7 +22,7 @@ function Hero() {
           </p>
 
           <div className="hero-buttons">
-            <button className="btn-primary">Começar agora</button>
+            <button className="btn-primary">Baixar o app agora!</button>
 
             <button className="btn-secondary">
               <span className="icon-circle">⦿</span>

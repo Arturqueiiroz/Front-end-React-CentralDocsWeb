@@ -24,7 +24,11 @@ import "./App.css";
 function Home() {
   return (
     <div className="app-wrapper">
-      <Header />
+      <Header
+        exibirMenuLateral={false}
+        exibirNav={false}
+        exibirBusca={false}
+      />
       <Hero />
       <Efficiency />
       <CTA />
@@ -46,9 +50,18 @@ function RotaPrivada({ children }: { children: React.ReactNode }) {
 function AplicarTemaSalvo() {
   useEffect(() => {
     const temaSalvo = localStorage.getItem("tema") || "claro";
+    const perfilCorSalvo = localStorage.getItem("perfilCor") || "padrao";
 
     document.body.classList.remove("tema-claro", "tema-escuro");
     document.body.classList.add(`tema-${temaSalvo}`);
+
+    document.body.classList.remove(
+      "cor-padrao",
+      "cor-monocromatico",
+      "cor-protanopia",
+      "cor-tritanopia"
+    );
+    document.body.classList.add(`cor-${perfilCorSalvo}`);
   }, []);
 
   return null;

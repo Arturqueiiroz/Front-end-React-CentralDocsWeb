@@ -14,7 +14,7 @@ function CTA() {
         </h2>
 
         <button className="cta-button">
-          Começar agora — Grátis por 14 dias
+          Baixar o app agora! 
         </button>
       </div>
     </section>
